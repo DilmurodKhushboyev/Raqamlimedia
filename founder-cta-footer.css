@@ -1,0 +1,108 @@
+/* ── Founder, CTA, Footer, Floating Buttons, Urgency Banner ── */
+/* ── FOUNDER ── */
+.founder-box{
+  display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;
+  background:var(--card-bg);border:1px solid var(--glass-b);
+  border-radius:28px;padding:56px 60px;backdrop-filter:blur(18px);
+  position:relative;overflow:hidden;
+}
+.founder-box::before{
+  content:'';position:absolute;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(232,121,249,.1),transparent 70%);
+  top:-100px;right:-100px;pointer-events:none;
+}
+.founder-img-wrap{
+  position:relative;display:flex;justify-content:center;
+}
+.founder-img{
+  width:100%;max-width:320px;aspect-ratio:3/4;object-fit:cover;object-position:top;
+  border-radius:22px;
+  border:1px solid var(--glass-b);
+  box-shadow:0 32px 80px rgba(0,0,0,.5);
+}
+.founder-badge{
+  position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  color:#fff;font-size:.72rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;
+  padding:7px 20px;border-radius:50px;white-space:nowrap;
+  box-shadow:0 8px 24px rgba(232,121,249,.35);
+}
+.founder-content{display:flex;flex-direction:column}
+.founder-tag{
+  font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--accent);margin-bottom:12px;display:flex;align-items:center;gap:8px;
+}
+.founder-tag::before{content:'';width:24px;height:2px;background:var(--accent);border-radius:2px}
+.founder-name{
+  font-family:'Syne',sans-serif;font-size:clamp(1.8rem,3vw,2.4rem);
+  font-weight:800;letter-spacing:-1px;margin-bottom:6px;line-height:1.15;
+}
+.founder-role{
+  font-size:.88rem;color:var(--accent2);font-weight:600;margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.founder-role span{
+  padding:3px 12px;border-radius:20px;
+  background:rgba(129,140,248,.12);border:1px solid rgba(129,140,248,.2);
+}
+.founder-desc{font-size:.92rem;color:var(--muted);line-height:1.8;margin-bottom:28px}
+.founder-stats{display:flex;gap:28px;margin-bottom:32px}
+.f-stat{min-width:60px}
+.f-stat-n{
+  font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.f-stat-t{font-size:.75rem;color:var(--muted);margin-top:2px}
+.founder-btns{display:flex;gap:12px;flex-wrap:wrap}
+@media(max-width:960px){
+  .founder-box{grid-template-columns:1fr;padding:40px 28px;gap:40px;text-align:center}
+  .founder-tag{justify-content:center}
+  .founder-tag::before{display:none}
+  .founder-stats{justify-content:center}
+  .founder-btns{justify-content:center}
+  .founder-img{max-width:240px}
+}
+
+/* ── CTA ── */
+.cta-box{
+  background:var(--glass);border:1px solid var(--glass-b);
+  border-radius:28px;backdrop-filter:blur(20px);
+  padding:72px 60px;text-align:center;position:relative;overflow:hidden;
+}
+.cta-glow{
+  position:absolute;width:500px;height:500px;border-radius:50%;
+  background:radial-gradient(circle,rgba(147,51,234,.22),transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+}
+.cta-box h2{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:800;letter-spacing:-1px;margin-bottom:14px;position:relative;
+}
+.cta-box p{color:var(--muted);font-size:.98rem;line-height:1.75;margin-bottom:32px;position:relative}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative}
+
+/* ── FOOTER ── */
+footer{border-top:1px solid var(--glass-b);padding:40px 0 32px;position:relative;z-index:1}
+.footer-inner{display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+.footer-logo{
+  font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.footer-links{display:flex;gap:24px}
+.footer-links a{color:var(--muted);font-size:.85rem;text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:var(--text)}
+.footer-socials{display:flex;gap:12px}
+.f-soc{
+  width:40px;height:40px;border-radius:12px;
+  background:var(--glass);border:1px solid var(--glass-b);
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:transform .2s,background .2s;
+}
+.f-soc:hover{transform:translateY(-3px);background:var(--glass-h)}
+/* ✅ FIX 6: Footer focus styles */
+.f-soc:focus-visible,.footer-links a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.footer-copy{font-size:.8rem;color:var(--muted)}
+
